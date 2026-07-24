@@ -1025,7 +1025,7 @@ body.loaded .hero-core { opacity: 1; transform: none; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--border); padding: var(--space-5) 0 var(--space-4); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: var(--space-4); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: var(--space-4); }
 .footer-brand p { margin-top: 14px; font-size: 0.9rem; color: var(--text-3); max-width: 300px; }
 .footer h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 16px; }
 .footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -1037,6 +1037,8 @@ body.loaded .hero-core { opacity: 1; transform: none; }
   font-size: 0.82rem; color: var(--text-3);
 }
 .footer-status { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--success); }
+.footer-bottom a { color: var(--text-3); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: var(--border); transition: color 0.2s, text-decoration-color 0.2s; }
+.footer-bottom a:hover { color: var(--text-2); text-decoration-color: var(--text-3); }
 
 /* ---------- Mobile sticky CTA ---------- */
 .mobile-cta {
@@ -1122,6 +1124,40 @@ body.loaded .hero-core { opacity: 1; transform: none; }
 }
 
 /* ---------- Reduced motion ---------- */
+/* ---------- Legal pages (privacy / terms / cookies) ---------- */
+.legal-page { padding: calc(var(--nav-h) + 56px) 0 var(--space-6); }
+.legal-container { max-width: 760px; }
+.legal-back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--text-3); margin-bottom: var(--space-3); }
+.legal-back:hover { color: var(--text-2); }
+.legal-back svg { width: 15px; height: 15px; }
+.legal-page h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 10px 0 8px; }
+.legal-updated { font-size: 0.85rem; color: var(--text-3); margin-bottom: var(--space-2); }
+.legal-notice {
+  margin: var(--space-3) 0 var(--space-4); padding: 14px 16px; border-radius: var(--radius-sm);
+  background: rgba(255,181,71,0.08); border: 1px solid rgba(255,181,71,0.25);
+  font-size: 0.85rem; color: var(--text-2); line-height: 1.6;
+}
+.legal-body { margin-top: var(--space-4); border-top: 1px solid var(--border); padding-top: var(--space-4); }
+.legal-body h2 { font-size: 1.25rem; margin: var(--space-4) 0 12px; }
+.legal-body h2:first-child { margin-top: 0; }
+.legal-body h3 { font-size: 1.02rem; margin: var(--space-3) 0 8px; color: var(--text-2); }
+.legal-body p { font-size: 0.95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+.legal-body ul, .legal-body ol { margin: 0 0 14px 1.2em; color: var(--text-2); font-size: 0.95rem; line-height: 1.75; }
+.legal-body li { margin-bottom: 6px; }
+.legal-body li::marker { color: var(--ai); }
+.legal-body a { color: var(--ai); text-decoration: underline; text-underline-offset: 2px; }
+.legal-body strong { color: var(--text); }
+.legal-body table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.88rem; }
+.legal-body th, .legal-body td { text-align: left; padding: 9px 12px; border: 1px solid var(--border); color: var(--text-2); }
+.legal-body th { color: var(--text-3); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.legal-toc { margin: var(--space-3) 0 var(--space-4); padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); }
+.legal-toc b { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.legal-toc ol { margin: 0; padding-left: 1.2em; columns: 2; -webkit-columns: 2; column-gap: 24px; }
+.legal-toc li { font-size: 0.88rem; margin-bottom: 6px; break-inside: avoid; }
+.legal-toc a { color: var(--text-2); }
+.legal-toc a:hover { color: var(--ai); }
+@media (max-width: 560px) { .legal-toc ol { columns: 1; } }
+
 /* Reduced motion: keep the brand's ambient/looping animations, but calm the
    large-movement effects (smooth scroll + big scroll-reveal jumps + parallax).
    Ensures content is never hidden while still feeling alive on macOS "Reduce Motion". */
